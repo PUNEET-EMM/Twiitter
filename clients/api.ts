@@ -1,6 +1,6 @@
-import {GraphQLClient} from "graphql-request"
+// import {GraphQLClient} from "graphql-request"
 
-const isClient = typeof window !=="undefined"
+// const isClient = typeof window !=="undefined"
 
 // export const graphqlClient =new GraphQLClient("http://localhost:8000/graphql",{
 //     headers: ()=>({
@@ -9,7 +9,12 @@ const isClient = typeof window !=="undefined"
 
 //     })
 // });
-export const graphqlClient =new GraphQLClient("https://server-twitter-1.onrender.com/graphql",{
+
+import {GraphQLClient} from "graphql-request"
+
+const isClient = typeof window !=="undefined"
+
+export const graphqlClient =new GraphQLClient("https://server-twitter-s390.onrender.com/graphql",{
     headers: ()=>({
             Authorization: isClient 
          ?`Bearer ${window.localStorage.getItem("token")}`:"",

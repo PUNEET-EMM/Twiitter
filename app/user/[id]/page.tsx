@@ -24,12 +24,14 @@ export default  function Profile({params,searchParamas}:any)  {
     if(!userData) return;
     await graphqlClient.request(followUserMutation,{to:userData?.id})
     queryClient.invalidateQueries({ queryKey: ['current-user'] });
+    window.location.reload();
 
   },[userData?.id,queryClient])
   const handleUnFollowUser =useCallback(async()=>{
     if(!userData) return;
     await graphqlClient.request(UnfollowUserMutation,{to:userData?.id})
     queryClient.invalidateQueries({ queryKey: ['current-user'] });
+    window.location.reload();
 
   },[userData?.id,queryClient])
 
