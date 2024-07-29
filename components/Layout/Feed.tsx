@@ -37,7 +37,7 @@ const Feed: React.FC<FeedCardProps> = ({ data }) => {
                   {data.author?.firstName} {data.author?.lastName}
                 </a>
               </Link>
-              <div className="text-gray-500">@{data.author?.username}</div>
+              <div className="text-gray-500">@{data.author?.firstName}</div>
               <div className="text-gray-500">• 3min</div>
             </div>
             <div>

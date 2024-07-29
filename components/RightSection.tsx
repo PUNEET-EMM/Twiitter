@@ -12,9 +12,10 @@ import { Login } from "./Layout/Login";
 
 
 const RightSection = () => {
+  
   const {user} = useCurrentUser();
   const queryClient = useQueryClient();
-  console.log(user)
+ 
 
 
   return (
