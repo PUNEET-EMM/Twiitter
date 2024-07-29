@@ -2,7 +2,7 @@
 
 import { graphqlClient } from "@/clients/api";
 import { verifyUserGoogleToken } from "@/graphql/query/user";
-import { userCurrentUser } from "@/hooks";
+import { useCurrentUser } from "@/hooks/useCurrentUser";
 import { CredentialResponse, GoogleLogin } from "@react-oauth/google";
 import { useQueryClient } from "@tanstack/react-query";
 import React, { useCallback } from "react";
@@ -12,8 +12,9 @@ import { Login } from "./Layout/Login";
 
 
 const RightSection = () => {
-  const {user} = userCurrentUser();
+  const {user} = useCurrentUser();
   const queryClient = useQueryClient();
+  console.log(user)
 
 
   return (

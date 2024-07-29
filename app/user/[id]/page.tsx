@@ -7,14 +7,14 @@ import RightSection from '@/components/RightSection'
 import { Tweet, User } from '@/gql/graphql'
 import { UnfollowUserMutation, followUserMutation } from '@/graphql/mutation/user'
 import { getUserByIdQuery } from '@/graphql/query/user'
-import { userCurrentUser } from '@/hooks'
-import { useGetAllTweets } from '@/hooks/tweets'
+import { useCurrentUser } from '@/hooks/useCurrentUser'
+import { useGetAllTweets } from '@/hooks/useGetAllTweets'
 import { useQueryClient } from '@tanstack/react-query'
 import React, { useCallback, useEffect, useMemo, useState } from 'react'
 import { BsArrowLeftShort } from 'react-icons/bs'
 
 export default  function Profile({params,searchParamas}:any)  {
-  const {user} = userCurrentUser();
+  const {user} = useCurrentUser();
   const queryClient = useQueryClient();
   // const data = GetUser(params.id)
   // console.log(data);
